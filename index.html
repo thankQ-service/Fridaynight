@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>땡큐캠핑 - 금요일밤에 참여 캠핑장 모집</title>
+    <title>땡큐캠핑 - 금밤캠핑 참여 캠핑장 모집</title>
     
     <!-- 폰트 로드: 가독성 높은 웹폰트 Pretendard 적용 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     
-    <!-- Tailwind CSS 로드 -->
+    <!-- Tailwind CSS 로드 및 설정 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,6 +28,8 @@
             }
         }
     </script>
+    
+    <!-- 사용자 정의 스타일 -->
     <style>
         /* CSS 변수 설정: 여기서 색상을 쉽게 변경할 수 있습니다. */
         :root {
@@ -36,7 +38,6 @@
             --bg-body: #f5f5f5;
         }
 
-        /* 기본 설정 및 리셋 */
         html {
             scroll-behavior: smooth; /* 부드러운 스크롤 */
         }
@@ -46,7 +47,7 @@
             margin: 0;
             padding: 0;
             color: #333333;
-            word-break: keep-all; /* 단어 단위 줄바꿈 유지 */
+            word-break: keep-all;
         }
 
         /* 860px 상세페이지 캔버스 */
@@ -70,25 +71,20 @@
             transform: translateY(0);
         }
 
-        /* 섹션 여백 공통 클래스 (임팩트와 가독성을 위한 넓은 여백) */
+        /* 섹션 여백 공통 클래스 */
         .section-padding {
             padding-top: 140px;
             padding-bottom: 140px;
         }
 
-        /* 작은 여백 클래스 (리스트나 블록 사이) */
-        .gap-large {
-            gap: 2rem;
-        }
-
         /* 폼 요소 기본 스타일 리셋 */
-        input[type="text"], input[type="tel"], input[type="email"], select {
+        input[type="text"], input[type="tel"], input[type="email"], input[type="password"], select {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
         }
 
-        /* 화살표 아이콘 (CSS 그리기) */
+        /* 화살표 아이콘 */
         .arrow-down {
             width: 0; 
             height: 0; 
@@ -100,7 +96,6 @@
     </style>
 </head>
 <body>
-
     <div class="page-container">
         
         <!-- 1. 메인 도입 -->
@@ -110,24 +105,22 @@
             </div>
 
             <p class="fade-in text-brand font-bold text-lg sm:text-xl mb-6 tracking-widest leading-relaxed">
-                금요일의 새로운 캠핑<br>
-                새로운 캠페인을 제안합니다.
+                "금요일 공실을 만실로"
             </p>
 
-            <h1 class="fade-in text-5xl sm:text-7xl font-black text-white leading-tight mb-8 tracking-tighter">
-                금요일 밤은<br>
-                조금 길어도 되니까.
+            <h1 class="fade-in text-4xl sm:text-6xl font-black text-white leading-tight mb-8 tracking-tighter">
+                금밤캠핑(FRIDAY CAMP) 캠페인<br>
+                참여 캠핑장 모집
             </h1>
 
             <p class="fade-in text-xl sm:text-2xl text-gray-300 font-medium leading-relaxed mb-20">
-                금요일 퇴근 후 시작해도<br>
-                충분히 즐길 수 있는 캠핑.
+                캠퍼들에게는 퇴근 후에도 여유롭게 즐길 수 있는 캠핑을<br>
+                캠핑장에는 예약없는 금요일을 풍족하게
             </p>
 
             <div class="fade-in">
-                <p class="text-white text-lg mb-6 font-bold">금요일밤에 참여 캠핑장을 모집합니다.</p>
                 <a href="#apply-form" class="inline-block bg-brand hover:bg-brandHover text-white font-black text-xl sm:text-2xl py-5 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(232,101,0,0.5)]">
-                    금요일밤에 캠페인 신청하기
+                    금밤캠핑 캠페인 신청하기
                 </a>
             </div>
         </section>
@@ -155,8 +148,8 @@
         <!-- 3. 캠핑장의 현실 -->
         <section class="section-padding bg-gray-50 flex flex-col items-center text-center px-6 sm:px-10 border-t border-gray-100">
             <h2 class="fade-in text-4xl sm:text-5xl font-black text-dark leading-tight mb-12 tracking-tight">
-                토요일은 만실인데,<br>
-                금요일은 빈자리로 남아있습니다.
+                새로운 예약을<br>
+                만들 수 있습니다.
             </h2>
             
             <p class="fade-in text-xl sm:text-2xl text-gray-600 leading-loose mb-16">
@@ -176,7 +169,6 @@
                 금요일 밤에는<br>조금 길어도 되니까.
             </h2>
 
-            <!-- 이용 흐름 (모바일 세로형, PC에서도 명확한 시선 흐름을 위해 세로 블록 유지) -->
             <div class="fade-in w-full max-w-md flex flex-col items-center text-xl sm:text-2xl font-bold text-gray-800">
                 <div class="bg-gray-100 w-full py-5 rounded-2xl shadow-sm">퇴근</div>
                 <div class="arrow-down"></div>
@@ -200,53 +192,52 @@
         <!-- 5. 캠페인 정의 -->
         <section class="section-padding bg-dark text-white flex flex-col items-center text-center px-6 sm:px-10 border-t-8 border-brand">
             <h2 class="fade-in text-3xl sm:text-5xl font-black leading-tight mb-12 tracking-tight">
-                늦게까지 노는 캠핑이 아니라,<br>
-                <span class="text-brand">늦게까지 캠핑할 수 있는 캠핑.</span>
+                "늦게까지 노는 캠핑이 아니라,<br>
+                <span class="text-brand">좀더 여유롭게 캠핑할 수 있는 캠핑"</span>
             </h2>
             
             <p class="fade-in text-xl sm:text-2xl text-gray-300 leading-loose mb-16 max-w-3xl">
-                금요일밤에는 매너를 없애는 캠핑이 아닙니다.<br>
-                금요일 퇴근박에 맞춰 캠핑시간과 이용기준을 새롭게 설계합니다.
+                금밤캠핑은 매너타임을 없애는 캠핑이 아닙니다.
             </p>
 
             <div class="fade-in border-2 border-brand py-8 px-8 sm:px-12 w-full max-w-3xl rounded-3xl bg-black/30">
                 <p class="text-2xl sm:text-3xl font-black text-white leading-relaxed">
-                    무제한 허용이 아닌,<br>
-                    정해진 기준 안에서 누리는 여유입니다.
+                    단 몇 시간의 여유시간만으로도 가능한<br>
+                    금요일 퇴근박의 <span class="text-brand">새로운 패러다임</span>을 제시하고자 합니다.
                 </p>
             </div>
         </section>
 
-        <!-- 6. 운영기준 & 7. 제한행위 통합 섹션으로 레이아웃 구성 -->
+        <!-- 6. 운영기준 & 7. 제한행위 통합 섹션 -->
         <section class="section-padding bg-white flex flex-col items-center text-center px-6 sm:px-10">
             
             <!-- 6. 운영기준 -->
-            <div class="w-full max-w-4xl mb-32">
+            <div class="w-full max-w-4xl mb-32 flex flex-col items-center">
                 <h3 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-12 border-b-2 border-dark pb-4 inline-block">
                     캠페인 운영기준
                 </h3>
-                <div class="fade-in grid grid-cols-1 sm:grid-cols-2 gap-6 text-center text-lg sm:text-xl font-bold text-gray-700">
-                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <span class="block text-brand text-sm mb-2 font-black">기준 01</span>
+                <div class="fade-in flex flex-col gap-4 text-center text-lg sm:text-xl font-bold text-gray-700 w-full max-w-2xl">
+                    <div class="bg-gray-50 py-5 px-8 rounded-2xl border border-gray-200">
+                        <span class="block text-brand text-sm mb-1 font-black">기준 01</span>
                         금요일 1박 한정
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <span class="block text-brand text-sm mb-2 font-black">기준 02</span>
+                    <div class="bg-gray-50 py-5 px-8 rounded-2xl border border-gray-200">
+                        <span class="block text-brand text-sm mb-1 font-black">기준 02</span>
                         매너타임 토요일 새벽 2시
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <span class="block text-brand text-sm mb-2 font-black">기준 03</span>
+                    <div class="bg-gray-50 py-5 px-8 rounded-2xl border border-gray-200">
+                        <span class="block text-brand text-sm mb-1 font-black">기준 03</span>
                         토요일부터 기존 캠핑장 운영기준 적용
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <span class="block text-brand text-sm mb-2 font-black">기준 04</span>
+                    <div class="bg-gray-50 py-5 px-8 rounded-2xl border border-gray-200">
+                        <span class="block text-brand text-sm mb-1 font-black">기준 04</span>
                         금토일 2박 예약 고객도 금요일 밤에만 적용
                     </div>
                 </div>
             </div>
 
             <!-- 7. 제한행위 -->
-            <div class="w-full max-w-4xl">
+            <div class="w-full max-w-4xl flex flex-col items-center">
                 <h3 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-12 border-b-2 border-dark pb-4 inline-block">
                     철저한 제한행위
                 </h3>
@@ -286,99 +277,101 @@
             <!-- 중간 버튼 -->
             <div class="fade-in w-full flex justify-center">
                 <a href="#apply-form" class="inline-block bg-white text-brand font-black text-xl sm:text-2xl py-5 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-xl border-4 border-white">
-                    금요일밤에 캠페인 신청하기
+                    금밤캠핑 캠페인 신청하기
                 </a>
             </div>
         </section>
 
         <!-- 9. 리스크 관리 -->
-        <section class="section-padding bg-white flex flex-col items-center px-6 sm:px-10">
-            <h2 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-16 text-center tracking-tight">
+        <section class="section-padding bg-white flex flex-col items-center px-6 sm:px-10 text-center">
+            <h2 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-16 tracking-tight">
                 안전한 운영을 위한<br>리스크 관리
             </h2>
             
-            <ul class="fade-in w-full max-w-2xl space-y-5 text-lg sm:text-xl font-medium text-gray-700 text-center">
-                <li class="flex items-center justify-center">
-                    <span class="text-brand font-black mr-3 text-2xl">•</span>
-                    <span class="pt-1">예약 전 이용수칙 필수 동의</span>
-                </li>
-                <li class="flex items-center justify-center">
-                    <span class="text-brand font-black mr-3 text-2xl">•</span>
-                    <span class="pt-1">캠핑장 경고 및 퇴실 기준 확립</span>
-                </li>
-                <li class="flex items-center justify-center">
-                    <span class="text-brand font-black mr-3 text-2xl">•</span>
-                    <span class="pt-1">참여 사이트 별도 운영 권장</span>
-                </li>
-                <li class="flex items-center justify-center">
-                    <span class="text-brand font-black mr-3 text-2xl">•</span>
-                    <span class="pt-1">일반 사이트와 이격 운영</span>
-                </li>
-                <li class="flex items-center justify-center">
-                    <span class="text-brand font-black mr-3 text-2xl">•</span>
-                    <span class="pt-1">반복 위반 고객 제재 검토</span>
-                </li>
-                <li class="flex items-center justify-center">
-                    <span class="text-brand font-black mr-3 text-2xl">•</span>
-                    <span class="pt-1">민원 발생률과 캠지기 만족도 측정</span>
-                </li>
-            </ul>
+            <div class="fade-in w-full max-w-xl">
+                <ul class="space-y-5 text-lg sm:text-xl font-medium text-gray-700 flex flex-col items-center">
+                    <li class="flex items-center w-full justify-center">
+                        <span class="text-brand font-black mr-3 text-2xl">•</span>
+                        <span class="pt-1">예약 전 이용수칙 필수 동의</span>
+                    </li>
+                    <li class="flex items-center w-full justify-center">
+                        <span class="text-brand font-black mr-3 text-2xl">•</span>
+                        <span class="pt-1">캠핑장 경고 및 퇴실 기준 확립</span>
+                    </li>
+                    <li class="flex items-center w-full justify-center">
+                        <span class="text-brand font-black mr-3 text-2xl">•</span>
+                        <span class="pt-1">참여 사이트 별도 운영 권장</span>
+                    </li>
+                    <li class="flex items-center w-full justify-center">
+                        <span class="text-brand font-black mr-3 text-2xl">•</span>
+                        <span class="pt-1">일반 사이트와 이격 운영</span>
+                    </li>
+                    <li class="flex items-center w-full justify-center">
+                        <span class="text-brand font-black mr-3 text-2xl">•</span>
+                        <span class="pt-1">반복 위반 고객 제재 검토</span>
+                    </li>
+                    <li class="flex items-center w-full justify-center">
+                        <span class="text-brand font-black mr-3 text-2xl">•</span>
+                        <span class="pt-1">민원 발생률과 캠지기 만족도 측정</span>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <!-- 10. 참여 캠핑장 조건 & 11. 운영 일정 -->
         <section class="section-padding bg-gray-50 border-t border-gray-200 flex flex-col items-center px-6 sm:px-10 text-center">
             
             <!-- 10. 참여 조건 -->
-            <div class="w-full max-w-3xl mb-32">
+            <div class="w-full max-w-3xl mb-32 flex flex-col items-center">
                 <h2 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-12 tracking-tight">
                     이런 캠핑장과 함께하고 싶습니다
                 </h2>
-                <div class="fade-in flex flex-col gap-4 text-lg sm:text-xl font-bold text-gray-700 text-center items-center">
-                    <div class="bg-white py-4 px-8 w-full max-w-lg rounded-2xl shadow-sm border border-gray-100">
+                <div class="fade-in flex flex-col gap-4 text-lg sm:text-xl font-bold text-gray-700 text-center items-center w-full">
+                    <div class="bg-white py-4 px-8 w-full max-w-md rounded-2xl shadow-sm border border-gray-100">
                         금요일 예약률을 높이고 싶은 캠핑장
                     </div>
-                    <div class="bg-white py-4 px-8 w-full max-w-lg rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white py-4 px-8 w-full max-w-md rounded-2xl shadow-sm border border-gray-100">
                         퇴근박 고객을 확보하고 싶은 캠핑장
                     </div>
-                    <div class="bg-white py-4 px-8 w-full max-w-lg rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white py-4 px-8 w-full max-w-md rounded-2xl shadow-sm border border-gray-100">
                         공통 운영기준에 동의하는 캠핑장
                     </div>
-                    <div class="bg-dark text-white py-5 px-8 w-full max-w-lg rounded-2xl shadow-sm mt-4 border-2 border-dark text-xl sm:text-2xl font-black">
+                    <div class="bg-dark text-white py-5 px-8 w-full max-w-md rounded-2xl shadow-sm mt-4 border-2 border-dark text-xl sm:text-2xl font-black">
                         새로운 캠핑 이용문화를 함께 만들 캠핑장
                     </div>
                 </div>
             </div>
 
-            <!-- 11. 운영 일정 -->
-            <div class="w-full max-w-3xl">
+            <!-- 11. 운영 일정 (2x2 그리드 + 하단 제외일정 박스 레이아웃) -->
+            <div class="w-full max-w-3xl flex flex-col items-center">
                 <h2 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-12 tracking-tight">
                     캠페인 운영 일정
                 </h2>
-                <div class="fade-in grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                <div class="fade-in grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mb-6">
+                    <div class="bg-white py-6 px-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center">
                         <p class="text-sm text-gray-500 font-bold mb-1">캠핑장 모집</p>
-                        <p class="text-lg font-black text-dark">2026년 8월 25일부터</p>
+                        <p class="text-xl font-black text-dark">2026년 8월 25일부터</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="bg-white py-6 px-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center">
                         <p class="text-sm text-gray-500 font-bold mb-1">캠페인 노출</p>
-                        <p class="text-lg font-black text-dark">2026년 9월 1일부터</p>
+                        <p class="text-xl font-black text-dark">2026년 9월 1일부터</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="bg-white py-6 px-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center">
                         <p class="text-sm text-gray-500 font-bold mb-1">운영 요일</p>
-                        <p class="text-lg font-black text-dark">매주 금요일</p>
+                        <p class="text-xl font-black text-dark">매주 금요일</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="bg-white py-6 px-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center">
                         <p class="text-sm text-gray-500 font-bold mb-1">운영 종료시간</p>
-                        <p class="text-lg font-black text-brand">토요일 새벽 2시</p>
+                        <p class="text-xl font-black text-brand">토요일 새벽 2시</p>
                     </div>
                 </div>
 
-                <div class="fade-in bg-gray-200/60 p-6 rounded-xl border border-gray-300 mt-4 text-center">
-                    <p class="text-sm text-gray-600 font-bold mb-4">연휴기간 및 특정기간 금요일은 제외됩니다.</p>
-                    <ul class="text-lg font-black text-dark flex flex-col items-center space-y-2">
-                        <li class="text-red-600 flex items-center"><span class="mr-2">•</span> 9월 25일 금요일</li>
-                        <li class="text-red-600 flex items-center"><span class="mr-2">•</span> 10월 30일 금요일</li>
-                        <li class="text-red-600 flex items-center"><span class="mr-2">•</span> 12월 25일 금요일</li>
+                <div class="fade-in bg-gray-200/60 p-6 rounded-2xl border border-gray-300 text-center w-full max-w-2xl shadow-sm">
+                    <p class="text-sm text-gray-600 font-bold mb-3">연휴기간 및 특정기간 금요일은 제외됩니다.</p>
+                    <ul class="text-lg font-black text-dark flex flex-col sm:flex-row justify-center gap-4">
+                        <li class="text-red-600 flex items-center justify-center"><span class="mr-2">•</span> 9월 25일 금요일</li>
+                        <li class="text-red-600 flex items-center justify-center"><span class="mr-2">•</span> 10월 30일 금요일</li>
+                        <li class="text-red-600 flex items-center justify-center"><span class="mr-2">•</span> 12월 25일 금요일</li>
                     </ul>
                 </div>
 
@@ -388,7 +381,7 @@
 
         <!-- 12. 클로징 -->
         <section class="section-padding bg-dark text-white flex flex-col items-center text-center px-6 sm:px-10 border-t-8 border-brand">
-            <h2 class="fade-in text-4xl sm:text-5xl font-black leading-tight mb-10 tracking-tight text-brand">
+            <h2 class="fade-in text-4xl sm:text-5xl font-black leading-tight mb-16 tracking-tight text-brand">
                 "금요일 밤은<br>조금 길어도 되니까."
             </h2>
             
@@ -399,11 +392,11 @@
 
             <h3 class="fade-in text-3xl sm:text-4xl font-black text-white leading-tight mb-20 tracking-tighter">
                 여유로운 금요일 밤이 계속될 수 있도록<br>
-                금요일밤에 캠페인의 새로운 매너를 함께 만들어주세요.
+                금밤캠핑의 새로운 매너를 함께 만들어주세요.
             </h3>
             
             <a href="#apply-form" class="fade-in inline-block bg-brand hover:bg-brandHover text-white font-black text-xl sm:text-2xl py-6 px-16 rounded-full transition duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(232,101,0,0.5)] tracking-wide">
-                금요일밤에 캠페인 신청하기
+                금밤캠핑 캠페인 신청하기
             </a>
         </section>
 
@@ -553,7 +546,7 @@
                     </div>
 
                     <button type="submit" id="submitBtn" class="w-full bg-brand hover:bg-brandHover text-white font-black text-xl py-5 rounded-xl transition duration-300 shadow-lg">
-                        캠페인 신청하기
+                        금밤캠핑 캠페인 신청하기
                     </button>
                     
                     <p class="text-center text-gray-500 font-medium mt-6 text-sm sm:text-base">
@@ -565,18 +558,31 @@
 
         <!-- 관리자페이지 접근 버튼 -->
         <div class="text-center py-10 bg-gray-100">
-            <button onclick="toggleAdmin()" class="text-xs text-gray-400 hover:text-gray-700 underline font-medium">관리자페이지 (Admin)</button>
+            <button onclick="window.showAuthModal()" class="text-xs text-gray-400 hover:text-gray-700 underline font-medium">관리자페이지 (Admin)</button>
         </div>
 
+    </div>
+
+    <!-- 관리자 인증 모달 -->
+    <div id="auth-modal" class="hidden fixed inset-0 bg-black/60 z-[90] flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-8 w-full max-w-sm shadow-2xl">
+            <h3 class="text-xl font-black mb-2 text-dark">관리자 로그인</h3>
+            <p class="text-gray-500 text-sm mb-6 font-medium">관리자 전용 페이지입니다. 비밀번호를 입력해주세요.</p>
+            <input type="password" id="adminPassword" placeholder="비밀번호 입력" class="w-full border border-gray-300 rounded-xl px-4 py-3 mb-4 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand" onkeypress="if(event.key === 'Enter') window.checkAdminAuth()">
+            <div class="flex gap-2">
+                <button onclick="window.closeAuthModal()" class="w-1/2 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 transition">취소</button>
+                <button onclick="window.checkAdminAuth()" class="w-1/2 py-3 bg-dark text-white rounded-xl font-bold hover:bg-black transition">확인</button>
+            </div>
+        </div>
     </div>
 
     <!-- 14. 관리자 페이지 (기본 숨김) -->
     <div id="admin-page" class="hidden max-w-6xl mx-auto my-10 bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-200">
         <div class="bg-dark p-6 flex flex-col sm:flex-row justify-between items-center text-white gap-4">
-            <h2 class="text-2xl font-black">신청 내역 관리자</h2>
+            <h2 class="text-2xl font-black">금밤캠핑 신청 내역 관리자</h2>
             <div class="flex gap-3">
-                <button onclick="downloadCSV()" class="bg-green-600 hover:bg-green-700 px-5 py-2.5 rounded-lg font-bold text-sm transition">엑셀(CSV) 다운로드</button>
-                <button onclick="toggleAdmin()" class="bg-gray-700 hover:bg-gray-600 px-5 py-2.5 rounded-lg font-bold text-sm transition">상세페이지로 돌아가기</button>
+                <button onclick="window.downloadCSV()" class="bg-green-600 hover:bg-green-700 px-5 py-2.5 rounded-lg font-bold text-sm transition">엑셀(CSV) 다운로드</button>
+                <button onclick="window.closeAdminPage()" class="bg-gray-700 hover:bg-gray-600 px-5 py-2.5 rounded-lg font-bold text-sm transition">상세페이지로 돌아가기</button>
             </div>
         </div>
         <div class="p-6 overflow-x-auto">
@@ -607,7 +613,7 @@
         <div class="bg-white rounded-2xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
             <h3 class="text-xl font-black mb-6 text-dark border-b pb-3">신청 정보 수정</h3>
             <form id="editForm" class="space-y-4">
-                <input type="hidden" name="id">
+                <input type="hidden" name="dbId">
                 <div class="grid grid-cols-2 gap-4">
                     <div><label class="block text-xs font-bold text-gray-600 mb-1">캠핑장명</label><input type="text" name="campName" class="w-full border rounded p-2"></div>
                     <div><label class="block text-xs font-bold text-gray-600 mb-1">대표자명</label><input type="text" name="ceoName" class="w-full border rounded p-2"></div>
@@ -626,7 +632,7 @@
                 </div>
                 <div><label class="block text-xs font-bold text-gray-600 mb-1">제한사항 등 메모</label><textarea name="memo" rows="3" class="w-full border rounded p-2 resize-none"></textarea></div>
                 <div class="flex justify-end gap-2 mt-8 pt-4 border-t">
-                    <button type="button" onclick="closeEditModal()" class="px-6 py-2 bg-gray-200 rounded-lg font-bold hover:bg-gray-300">취소</button>
+                    <button type="button" onclick="window.closeEditModal()" class="px-6 py-2 bg-gray-200 rounded-lg font-bold hover:bg-gray-300">취소</button>
                     <button type="submit" class="px-6 py-2 bg-brand text-white rounded-lg font-bold hover:bg-brandHover">저장하기</button>
                 </div>
             </form>
@@ -639,21 +645,21 @@
             <h3 class="text-xl font-black mb-2 text-red-600">신청내역 삭제</h3>
             <p class="text-gray-600 mb-6 font-medium">정말 이 신청건을 삭제하시겠습니까?<br>삭제 후 복구할 수 없습니다.</p>
             <div class="flex gap-2 justify-center">
-                <button onclick="cancelDelete()" class="px-6 py-3 bg-gray-200 rounded-xl font-bold hover:bg-gray-300 w-1/2">취소</button>
-                <button onclick="confirmDelete()" class="px-6 py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 w-1/2 shadow-lg">삭제하기</button>
+                <button onclick="window.cancelDelete()" class="px-6 py-3 bg-gray-200 rounded-xl font-bold hover:bg-gray-300 w-1/2">취소</button>
+                <button onclick="window.confirmDelete()" class="px-6 py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 w-1/2 shadow-lg">삭제하기</button>
             </div>
         </div>
     </div>
 
-    <!-- 제출 전 최종 확인 모달 (신규 추가) -->
+    <!-- 제출 전 최종 확인 모달 -->
     <div id="confirm-modal" class="hidden fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl p-6 w-full max-w-sm text-center transform scale-100 transition-transform shadow-2xl">
             <div class="w-16 h-16 bg-orange-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">!</div>
             <h3 class="text-2xl font-black mb-2 text-dark">최종 확인</h3>
-            <p class="text-gray-600 mb-8 font-medium text-lg leading-relaxed">모든 동의사항을 읽고 확인하셨나요?<br>이대로 캠페인 신청서를 접수합니다.</p>
+            <p class="text-gray-600 mb-8 font-medium text-lg leading-relaxed">모든 동의사항을 확인하셨나요?<br>이대로 캠페인 신청서를 접수합니다.</p>
             <div class="flex gap-2 justify-center">
-                <button type="button" onclick="closeConfirmModal()" class="px-5 py-4 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 w-1/2 transition">다시 확인</button>
-                <button type="button" onclick="submitFormFinally()" class="px-5 py-4 bg-brand text-white rounded-xl font-bold hover:bg-brandHover w-1/2 shadow-lg transition">네, 신청합니다</button>
+                <button type="button" onclick="window.closeConfirmModal()" class="px-5 py-4 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 w-1/2 transition">다시 확인</button>
+                <button type="button" onclick="window.submitFormFinally()" class="px-5 py-4 bg-brand text-white rounded-xl font-bold hover:bg-brandHover w-1/2 shadow-lg transition">네, 신청합니다</button>
             </div>
         </div>
     </div>
@@ -663,81 +669,146 @@
         알림 메시지
     </div>
 
-    <!-- 기능 구동 자바스크립트 -->
-    <script>
-        let applications = [];
-        let pendingFormData = null; // 제출 대기 상태의 폼 데이터
+    <!-- Firebase 연동 스크립트 -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+        import { getFirestore, doc, collection, addDoc, updateDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+        // 사장님의 실제 Firebase 정보 
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_bCgkuanzgXy8aZ4O0lnZ-qVDmiQlctc",
+            authDomain: "fridaynight-18248.firebaseapp.com",
+            projectId: "fridaynight-18248",
+            storageBucket: "fridaynight-18248.firebasestorage.app",
+            messagingSenderId: "142451503407",
+            appId: "1:142451503407:web:1826be86cb3eec3faff1da",
+            measurementId: "G-7G50QBSJ6Z"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+
+        const getCollectionPath = () => "applications";
+
+        let applications = [];
+        let pendingFormData = null; 
+
+        // 바로 실시간 데이터 로드 시작
+        loadDataFromFirebase();
+
+        // 실시간 데이터 불러오기
+        function loadDataFromFirebase() {
+            const colRef = collection(db, getCollectionPath());
+            
+            // onSnapshot을 통한 실시간 감지
+            onSnapshot(colRef, (snapshot) => {
+                applications = [];
+                snapshot.forEach(docSnap => {
+                    applications.push({ dbId: docSnap.id, ...docSnap.data() });
+                });
+                
+                // 최신순 정렬
+                applications.sort((a, b) => new Date(b.date) - new Date(a.date));
+                renderTable();
+            }, (error) => {
+                console.error("Firestore Error:", error);
+            });
+        }
+
+        /* -------------------------------------------
+           UI 기능 및 이벤트 핸들러 (전역 함수로 등록)
+        ------------------------------------------- */
         const form = document.getElementById('campingApplyForm');
         const submitBtn = document.getElementById('submitBtn');
 
-        // 제출 버튼 클릭 시 폼 검증 (체크 안 한 항목이 있을 때 토스트 알림)
         submitBtn.addEventListener('click', function(e) {
             if(!form.checkValidity()) {
-                e.preventDefault(); // 기본 제출 방지
-                showToast("입력 사항과 필수 동의 항목을 모두 체크해 주세요.");
-                form.reportValidity(); // 브라우저 기본 경고 툴팁 표시
+                e.preventDefault();
+                window.showToast("입력 사항과 필수 동의 항목을 모두 체크해 주세요.");
+                form.reportValidity();
             }
         });
 
-        // 폼 유효성 검증을 통과하여 정상 제출될 때 -> 확인 모달 띄우기
         form.addEventListener('submit', function(e) {
-            e.preventDefault(); // 즉시 제출 방지
+            e.preventDefault();
             pendingFormData = new FormData(this);
             document.getElementById('confirm-modal').classList.remove('hidden');
         });
 
-        // 확인 모달 닫기
-        function closeConfirmModal() {
+        window.closeConfirmModal = function() {
             document.getElementById('confirm-modal').classList.add('hidden');
             pendingFormData = null;
         }
 
-        // 최종 제출 실행 (모달에서 '네, 신청합니다' 클릭 시)
-        function submitFormFinally() {
+        // Firestore에 데이터 쓰기 (신청하기)
+        window.submitFormFinally = async function() {
             if(!pendingFormData) return;
 
             const newApp = {
-                id: Date.now().toString(),
                 date: new Date().toLocaleString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit' }),
             };
             pendingFormData.forEach((value, key) => { newApp[key] = value; });
-            applications.push(newApp);
             
-            closeConfirmModal();
-            
-            // 성공 모달 띄우기
-            const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black/60 flex items-center justify-center z-[80]';
-            modal.innerHTML = `
-                <div class="bg-white p-8 rounded-3xl text-center max-w-sm w-full mx-4 shadow-2xl">
-                    <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✓</div>
-                    <h3 class="text-2xl font-black text-dark mb-2">신청 완료</h3>
-                    <p class="text-gray-600 mb-8 font-medium">성공적으로 접수되었습니다.<br>담당자가 곧 연락드리겠습니다.</p>
-                    <button onclick="this.closest('.fixed').remove()" class="w-full bg-brand hover:bg-brandHover text-white font-bold py-4 rounded-xl transition shadow-lg">확인</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            
-            form.reset();
-            renderTable();
-            pendingFormData = null;
+            window.closeConfirmModal();
+
+            try {
+                // Firebase DB 저장
+                await addDoc(collection(db, getCollectionPath()), newApp);
+                
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black/60 flex items-center justify-center z-[80]';
+                modal.innerHTML = `
+                    <div class="bg-white p-8 rounded-3xl text-center max-w-sm w-full mx-4 shadow-2xl">
+                        <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✓</div>
+                        <h3 class="text-2xl font-black text-dark mb-2">신청 완료</h3>
+                        <p class="text-gray-600 mb-8 font-medium">성공적으로 접수되었습니다.<br>담당자가 곧 연락드리겠습니다.</p>
+                        <button onclick="this.closest('.fixed').remove()" class="w-full bg-brand hover:bg-brandHover text-white font-bold py-4 rounded-xl transition shadow-lg">확인</button>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                form.reset();
+                pendingFormData = null;
+            } catch(e) {
+                console.error(e);
+                window.showToast("신청 중 오류가 발생했습니다.");
+            }
         }
 
-        function toggleAdmin() {
+        window.showAuthModal = function() {
+            document.getElementById('auth-modal').classList.remove('hidden');
+            document.getElementById('adminPassword').value = '';
+            setTimeout(() => document.getElementById('adminPassword').focus(), 100);
+        }
+
+        window.closeAuthModal = function() {
+            document.getElementById('auth-modal').classList.add('hidden');
+        }
+
+        window.checkAdminAuth = function() {
+            const pwd = document.getElementById('adminPassword').value;
+            if(pwd === 'Net0521') {
+                window.closeAuthModal();
+                const pageContainer = document.querySelector('.page-container');
+                const adminPage = document.getElementById('admin-page');
+                
+                pageContainer.style.display = 'none';
+                adminPage.classList.remove('hidden');
+                window.scrollTo(0,0);
+            } else {
+                window.showToast('비밀번호가 일치하지 않습니다.');
+            }
+        }
+
+        window.closeAdminPage = function() {
             const pageContainer = document.querySelector('.page-container');
             const adminPage = document.getElementById('admin-page');
             
-            if (adminPage.classList.contains('hidden')) {
-                pageContainer.style.display = 'none';
-                adminPage.classList.remove('hidden');
-                renderTable();
-                window.scrollTo(0,0);
-            } else {
-                pageContainer.style.display = 'block';
-                adminPage.classList.add('hidden');
-                window.scrollTo(0, document.body.scrollHeight);
-            }
+            pageContainer.style.display = 'block';
+            adminPage.classList.add('hidden');
+            window.scrollTo(0, document.body.scrollHeight);
         }
 
         function renderTable() {
@@ -746,6 +817,7 @@
             tbody.innerHTML = '';
             
             if (applications.length === 0) {
+                emptyState.innerText = "아직 접수된 신청 내역이 없습니다.";
                 emptyState.style.display = 'block';
             } else {
                 emptyState.style.display = 'none';
@@ -764,8 +836,8 @@
                         </td>
                         <td class="p-3 border-b border-gray-100">${app.siteCount}</td>
                         <td class="p-3 border-b border-gray-100 text-center">
-                            <button onclick="openEditModal('${app.id}')" class="text-xs bg-gray-200 hover:bg-gray-300 px-3 py-1.5 rounded font-bold mr-1 transition">수정</button>
-                            <button onclick="requestDelete('${app.id}')" class="text-xs bg-red-50 text-red-600 hover:bg-red-100 px-3 py-1.5 rounded font-bold transition">삭제</button>
+                            <button onclick="window.openEditModal('${app.dbId}')" class="text-xs bg-gray-200 hover:bg-gray-300 px-3 py-1.5 rounded font-bold mr-1 transition">수정</button>
+                            <button onclick="window.requestDelete('${app.dbId}')" class="text-xs bg-red-50 text-red-600 hover:bg-red-100 px-3 py-1.5 rounded font-bold transition">삭제</button>
                         </td>
                     `;
                     tbody.appendChild(tr);
@@ -773,7 +845,7 @@
             }
         }
 
-        function showToast(msg) {
+        window.showToast = function(msg) {
             const toast = document.getElementById('toast');
             toast.innerText = msg;
             toast.style.opacity = '1';
@@ -781,56 +853,69 @@
         }
 
         let deleteTargetId = null;
-        function requestDelete(id) {
+        window.requestDelete = function(id) {
             deleteTargetId = id;
             document.getElementById('delete-modal').classList.remove('hidden');
         }
-        function confirmDelete() {
+        
+        // Firestore 데이터 삭제
+        window.confirmDelete = async function() {
             if(deleteTargetId) {
-                applications = applications.filter(app => app.id !== deleteTargetId);
-                renderTable();
-                cancelDelete();
-                showToast('삭제가 완료되었습니다.');
+                try {
+                    await deleteDoc(doc(db, getCollectionPath(), deleteTargetId));
+                    window.cancelDelete();
+                    window.showToast('삭제가 완료되었습니다.');
+                } catch(e) {
+                    console.error(e);
+                    window.showToast("삭제 중 오류가 발생했습니다.");
+                }
             }
         }
-        function cancelDelete() {
+        window.cancelDelete = function() {
             deleteTargetId = null;
             document.getElementById('delete-modal').classList.add('hidden');
         }
 
-        function openEditModal(id) {
-            const app = applications.find(a => a.id === id);
-            if(!app) return;
+        window.openEditModal = function(id) {
+            const appData = applications.find(a => a.dbId === id);
+            if(!appData) return;
             const form = document.getElementById('editForm');
-            Object.keys(app).forEach(key => {
-                if(form.elements[key]) form.elements[key].value = app[key];
+            form.elements['dbId'].value = id;
+            Object.keys(appData).forEach(key => {
+                if(form.elements[key]) form.elements[key].value = appData[key];
             });
             document.getElementById('edit-modal').classList.remove('hidden');
         }
 
-        function closeEditModal() {
+        window.closeEditModal = function() {
             document.getElementById('edit-modal').classList.add('hidden');
         }
 
-        document.getElementById('editForm').addEventListener('submit', function(e) {
+        // Firestore 데이터 업데이트
+        document.getElementById('editForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+
             const formData = new FormData(this);
-            const id = formData.get('id');
-            const index = applications.findIndex(a => a.id === id);
+            const id = formData.get('dbId');
             
-            if(index !== -1) {
-                formData.forEach((value, key) => {
-                    if(key !== 'id' && key !== 'date') applications[index][key] = value;
-                });
-                renderTable();
-                closeEditModal();
-                showToast('수정되었습니다.');
+            let updatedData = {};
+            formData.forEach((value, key) => {
+                if(key !== 'dbId' && key !== 'date') updatedData[key] = value;
+            });
+
+            try {
+                await updateDoc(doc(db, getCollectionPath(), id), updatedData);
+                window.closeEditModal();
+                window.showToast('수정되었습니다.');
+            } catch(error) {
+                console.error(error);
+                window.showToast('수정 중 오류가 발생했습니다.');
             }
         });
 
-        function downloadCSV() {
+        window.downloadCSV = function() {
             if(applications.length === 0) {
-                showToast('다운로드할 데이터가 없습니다.');
+                window.showToast('다운로드할 데이터가 없습니다.');
                 return;
             }
             
@@ -840,10 +925,10 @@
             
             let csvContent = BOM + headers.join(",") + "\n";
             
-            applications.forEach(app => {
+            applications.forEach(appData => {
                 const row = keys.map(key => {
-                    let val = app[key] || '';
-                    val = val.toString().replace(/"/g, '""'); // 쌍따옴표 이스케이프
+                    let val = appData[key] || '';
+                    val = val.toString().replace(/"/g, '""');
                     return `"${val}"`;
                 });
                 csvContent += row.join(",") + "\n";
@@ -853,35 +938,27 @@
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.setAttribute("href", url);
-            link.setAttribute("download", `금요일밤에_캠페인_신청내역_${new Date().toISOString().slice(0,10)}.csv`);
+            link.setAttribute("download", `금밤캠핑_신청내역_${new Date().toISOString().slice(0,10)}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
     </script>
+    
     <!-- 스크롤 애니메이션 자바스크립트 -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Intersection Observer 설정
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15 // 15% 보일 때 실행
-            };
-
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // 한 번 보이면 관찰 중단
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(el => {
-                observer.observe(el);
-            });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         });
     </script>
 </body>
