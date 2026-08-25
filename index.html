@@ -342,7 +342,7 @@
                 </div>
             </div>
 
-            <!-- 11. 운영 일정 (2x2 그리드 + 하단 제외일정 박스 레이아웃) -->
+            <!-- 11. 운영 일정 (2x2 그리드 배열 적용) -->
             <div class="w-full max-w-3xl flex flex-col items-center">
                 <h2 class="fade-in text-3xl sm:text-4xl font-black text-dark mb-12 tracking-tight">
                     캠페인 운영 일정
@@ -368,7 +368,7 @@
 
                 <div class="fade-in bg-gray-200/60 p-6 rounded-2xl border border-gray-300 text-center w-full max-w-2xl shadow-sm">
                     <p class="text-sm text-gray-600 font-bold mb-3">연휴기간 및 특정기간 금요일은 제외됩니다.</p>
-                    <ul class="text-lg font-black text-dark flex flex-col sm:flex-row justify-center gap-4">
+                    <ul class="text-lg font-black flex flex-col sm:flex-row justify-center gap-4">
                         <li class="text-red-600 flex items-center justify-center"><span class="mr-2">•</span> 9월 25일 금요일</li>
                         <li class="text-red-600 flex items-center justify-center"><span class="mr-2">•</span> 10월 30일 금요일</li>
                         <li class="text-red-600 flex items-center justify-center"><span class="mr-2">•</span> 12월 25일 금요일</li>
@@ -382,17 +382,17 @@
         <!-- 12. 클로징 -->
         <section class="section-padding bg-dark text-white flex flex-col items-center text-center px-6 sm:px-10 border-t-8 border-brand">
             <h2 class="fade-in text-4xl sm:text-5xl font-black leading-tight mb-16 tracking-tight text-brand">
-                "금요일 밤은<br>조금 길어도 되니까."
+                금밤캠핑(FRIDAY CAMP) 캠페인이 지향하는 방향은<br>
+                "NO MANNER"가 아니라<br>"NEW MANNER"입니다.
             </h2>
             
             <p class="fade-in text-xl sm:text-2xl text-gray-300 leading-loose mb-16">
-                조금 늦게 도착해도 괜찮고, 조금 더 오래 이야기해도 괜찮습니다.<br>
-                <span class="text-white font-black block mt-6 text-2xl sm:text-3xl">서로를 위한 기본적인 배려만 함께 지켜주세요.</span>
+                주말을 아끼는 금요일 퇴근박 캠핑은,<br>
+                <span class="text-white font-black block mt-6 text-2xl sm:text-3xl">캠퍼들의 니즈를 충족하는 새로운 캠핑문화의<br>시작이 될 수 있습니다.</span>
             </p>
 
             <h3 class="fade-in text-3xl sm:text-4xl font-black text-white leading-tight mb-20 tracking-tighter">
-                여유로운 금요일 밤이 계속될 수 있도록<br>
-                금밤캠핑의 새로운 매너를 함께 만들어주세요.
+                캠지기님들의 많은 참여 바랍니다.
             </h3>
             
             <a href="#apply-form" class="fade-in inline-block bg-brand hover:bg-brandHover text-white font-black text-xl sm:text-2xl py-6 px-16 rounded-full transition duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(232,101,0,0.5)] tracking-wide">
@@ -603,7 +603,7 @@
                 </tbody>
             </table>
             <div id="empty-state" class="text-center py-16 text-gray-400 font-medium text-lg bg-gray-50">
-                아직 접수된 신청 내역이 없습니다.
+                아직 접수된 신청 내역이 없습니다. (Firebase 연동 중)
             </div>
         </div>
     </div>
@@ -656,7 +656,7 @@
         <div class="bg-white rounded-2xl p-6 w-full max-w-sm text-center transform scale-100 transition-transform shadow-2xl">
             <div class="w-16 h-16 bg-orange-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">!</div>
             <h3 class="text-2xl font-black mb-2 text-dark">최종 확인</h3>
-            <p class="text-gray-600 mb-8 font-medium text-lg leading-relaxed">모든 동의사항을 확인하셨나요?<br>이대로 캠페인 신청서를 접수합니다.</p>
+            <p class="text-gray-600 mb-8 font-medium text-lg leading-relaxed">모든 동의사항을 읽고 확인하셨나요?<br>이대로 캠페인 신청서를 접수합니다.</p>
             <div class="flex gap-2 justify-center">
                 <button type="button" onclick="window.closeConfirmModal()" class="px-5 py-4 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 w-1/2 transition">다시 확인</button>
                 <button type="button" onclick="window.submitFormFinally()" class="px-5 py-4 bg-brand text-white rounded-xl font-bold hover:bg-brandHover w-1/2 shadow-lg transition">네, 신청합니다</button>
@@ -675,7 +675,7 @@
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
         import { getFirestore, doc, collection, addDoc, updateDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // 사장님의 실제 Firebase 정보 
+        // 사장님의 실제 Firebase 정보 적용 완료!
         const firebaseConfig = {
             apiKey: "AIzaSyA_bCgkuanzgXy8aZ4O0lnZ-qVDmiQlctc",
             authDomain: "fridaynight-18248.firebaseapp.com",
@@ -691,6 +691,7 @@
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
 
+        // GitHub 배포용 깔끔한 저장 경로
         const getCollectionPath = () => "applications";
 
         let applications = [];
@@ -938,7 +939,7 @@
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.setAttribute("href", url);
-            link.setAttribute("download", `금밤캠핑_신청내역_${new Date().toISOString().slice(0,10)}.csv`);
+            link.setAttribute("download", `금밤캠핑_캠페인_신청내역_${new Date().toISOString().slice(0,10)}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
